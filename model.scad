@@ -22,7 +22,7 @@ frame();
 module frame() {
   difference() {
     frame_base();
-    chip_hole(wx=13, wy=11.5);
+    chip_hole(wx=16, wy=12);
   }
 }
 
