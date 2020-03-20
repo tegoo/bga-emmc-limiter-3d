@@ -40,7 +40,8 @@ module frame_base() {
     dent2();
     material_safers();
   }
-  anchors();
+  anchors1();
+  anchors2();
 }
 
 module rcube() {
@@ -75,7 +76,7 @@ module dent2() {
   translate([-dx / 2, -dy / 2, 1.6]) cube([dx, dy, 10]);
 }
 
-module anchors() {
+module anchors1() {
   dx = (18.93 + 1) / 2;
   dy = (6.95  + 1) / 2;
   h = 3.2;
@@ -84,6 +85,15 @@ module anchors() {
   translate([ dx, -dy, 0]) cylinder(r=r, h=h);
   translate([-dx,  dy, 0]) cylinder(r=r, h=h);
   translate([-dx, -dy, 0]) cylinder(r=r, h=h);
+}
+
+module anchors2() {
+  dx = horizontal_size / 2 - 2.5;
+  dy = horizontal_size / 2 - 2;
+  h = 5.5;
+  r = 1;
+  translate([ dx, -dy, 0]) cylinder(r=r, h=h);
+  translate([-dx,  dy, 0]) cylinder(r=r, h=h);
 }
 
 module material_safers() {
