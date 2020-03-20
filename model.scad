@@ -60,8 +60,16 @@ module rcube() {
 module screw_holes() {
   dx = horizontal_size / 2 - 3.5;
   dy = horizontal_size / 2 - 3;
-  translate([ dx,  dy, -plenty / 2]) cylinder(r=1, h=plenty);
-  translate([-dx, -dy, -plenty / 2]) cylinder(r=1, h=plenty);
+  translate([ dx,  dy, 0]) screw_hole();
+  translate([-dx, -dy, 0]) screw_hole();
+}
+
+module screw_hole() {
+  union() {
+    cylinder(r=1, h=plenty);
+    translate([0, 0, 0.8]) cylinder(r1=1.85, r2=1, h=1.4);
+    translate([0, 0, -1])cylinder(r=1.85, h=1.8);
+  }
 }
 
 module dent1() {
