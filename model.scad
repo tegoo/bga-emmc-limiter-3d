@@ -38,6 +38,7 @@ module frame_base() {
     screw_holes();
     dent1();
     dent2();
+    material_safers();
   }
   anchors();
 }
@@ -83,4 +84,12 @@ module anchors() {
   translate([ dx, -dy, 0]) cylinder(r=r, h=h);
   translate([-dx,  dy, 0]) cylinder(r=r, h=h);
   translate([-dx, -dy, 0]) cylinder(r=r, h=h);
+}
+
+module material_safers() {
+  wy = 2.5;
+  wx = horizontal_size - 11;
+  dy = horizontal_size / 2 - wy - 0.8;
+  translate([-wx / 2, dy, 1]) cube([wx, wy, plenty]);
+  translate([-wx / 2, -dy - wy, 1]) cube([wx, wy, plenty]);
 }
